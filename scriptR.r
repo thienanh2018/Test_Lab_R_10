@@ -54,7 +54,17 @@ ggplot(filtered_data, aes(x = t, y = filtered_data$H, colour = "Hospital Beds Ne
        x = "Date",
        y = "Number of Beds")
 
+head(filtered_data)
 
+# Add the number of critical and dead to the plot
+
+ggplot(filtered_data, aes(x = t)) +
+  geom_line(aes(y = filtered_data$H), color = "red") +
+  geom_line(aes(y = filtered_data$C), color = "green") +
+  geom_line(aes(y = filtered_data$D), color = "black") +
+  labs(title = "Number of Hospital Beds, Critical, and Dead in Sydney (July-Dec 2020)",
+       x = "Date",
+       y = "Count")
 
 
 
