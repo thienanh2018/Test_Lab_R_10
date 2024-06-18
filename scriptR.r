@@ -66,5 +66,18 @@ ggplot(filtered_data, aes(x = t)) +
        x = "Date",
        y = "Count")
 
+# Change the y-scale to square-root-scale
+
+ggplot(filtered_data, aes(x = t)) +
+  geom_line(aes(y = filtered_data$H), color = "red") +
+  geom_line(aes(y = filtered_data$C), color = "green") +
+  geom_line(aes(y = filtered_data$D), color = "black") +
+  labs(title = "Number of Hospital Beds, Critical, and Dead in Sydney (July-Dec 2020)",
+       x = "Date",
+       y = "Count") +
+  scale_y_sqrt()
+
+
+
 
 
