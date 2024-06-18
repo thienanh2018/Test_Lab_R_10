@@ -44,4 +44,17 @@ ggplot(filtered_data, aes(x = t, y = filtered_data$H)) +
        y = "Hospital Beds Needed")
 
 
+# Plotting the number of hospital beds needed with a red line 
+# and adding a legend
+
+ggplot(filtered_data, aes(x = t, y = filtered_data$H, colour = "Hospital Beds Needed")) +
+  geom_line() + # The legend is automatically added for color
+  scale_color_manual(values = "red", labels = "Hospital Beds Needed") +
+    labs(title = "Number of Hospital Beds Needed in Sydney (July-Dec 2020)",
+       x = "Date",
+       y = "Number of Beds")
+
+
+
+
 
