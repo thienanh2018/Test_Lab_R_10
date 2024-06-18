@@ -27,3 +27,21 @@ ggplot(filtered_data, aes(x = filtered_data$t, y = filtered_data$H)) +
        y = "Hospital Beds Needed")
 
 
+# Display each month on the x axis
+filtered_data$day <- c(120, 150, 180, 210, 240, 270, 300)
+months <- c("July", "August", "September", "October", "November", "December", "January")
+names(filtered_data$day) <- months
+t <- filtered_data$day
+t
+
+
+# Plot Number of Hospital Beds by Months from July to Dec, 2020
+
+ggplot(filtered_data, aes(x = t, y = filtered_data$H)) +
+  geom_line() +
+  labs(title = "Number of Hospital Beds Needed in Sydney (July-Dec 2020)",
+       x = "Date",
+       y = "Hospital Beds Needed")
+
+
+
