@@ -55,6 +55,20 @@ ggplot(filtered_data, aes(x = t, y = filtered_data$H, colour = "Hospital Beds Ne
        y = "Number of Beds")
 
 
+# Update the plot so that the y axis has a log scale
+
+ggplot(filtered_data, aes(x = t)) +
+  geom_line(aes(y = H), color = "red") +
+  geom_line(aes(y = C), color = "blue") +
+  geom_line(aes(y = D), color = "black") +
+  labs(title = "Number of Hospital Beds, Critical, and Dead in Sydney (July-Dec 2020)",
+       x = "Date",
+       y = "Count") +
+  scale_y_log10()
+
+
+
+
 
 
 
